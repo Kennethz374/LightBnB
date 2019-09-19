@@ -38,6 +38,7 @@ module.exports = function(router, database) {
     const {email, password} = req.body;
     login(email, password)
       .then(user => {
+        console.log(user);
         if (!user) {
           res.send({error: "error"});
           return;
